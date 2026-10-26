@@ -43,3 +43,20 @@ standart bir giriş boyutu kullanılmasını kolaylaştırmaktadır.
 Bir sonraki aşamada görsellerin ön işleme gereksinimleri,
 kategori etiketleri ve kullanılacak sınıflandırma modelleri
 değerlendirilecektir.
+## 5. Metadata Kalitesi ve Eksik Değer Analizi
+
+BookCover30 veri setine ait eğitim ve test metadata dosyaları eksik değerler ve etiket tutarlılığı açısından incelenmiştir.
+
+Eğitim kümesindeki 51.300 kaydın 3.439'unda (%6,70), test kümesindeki 5.700 kaydın ise 397'sinde (%6,96) yazar bilgisi eksiktir.
+
+Buna karşılık kitap kimliği, dosya adı, görsel URL'si, kitap başlığı, sayısal metadata alanı ve kategori bilgilerinde eksik değer tespit edilmemiştir.
+
+Etiket dosyaları ile CSV metadata dosyaları karşılaştırıldığında:
+
+- Eğitim ve test kümelerinde kategori bilgisi bulunmayan kayıt tespit edilmemiştir.
+- Her iki kümede de aynı sayısal sınıf etiketinin birden fazla kategori adına karşılık geldiği bir durum görülmemiştir.
+- Etiket ve kategori bilgilerinin mevcut eşleşmelerinde tutarsızlık saptanmamıştır.
+
+**Ön işleme kararı:** Bu projede sınıflandırma modelleri kitap kapağı görüntülerini girdi olarak kullanacaktır. Yazar bilgisi model girdisi olmadığından, eksik yazar bilgileri nedeniyle herhangi bir görüntü veri setinden çıkarılmayacak veya eksik alanlar yapay olarak doldurulmayacaktır.
+
+Bu bulgular, veri setinin planlanan görüntü tabanlı sınıflandırma çalışması için uygun olduğunu desteklemektedir.

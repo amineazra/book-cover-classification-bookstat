@@ -200,3 +200,55 @@ Sonraki aşamalarda:
 6. Mümkün olduğunda etiketler doğrulanacak ve olası veri örtüşmeleri incelenecektir.
 
 Bu aşamada yalnızca metadata analizi ve ilk kategori eşleştirme çalışmaları tamamlanmıştır. Görsel indirme ve nihai dış değerlendirme henüz gerçekleştirilmemiştir.
+
+
+## 8. İndirilen Görüntülerin Kalite Analizi
+
+Goodreads Best Books Ever veri setindeki kapak görseli bağlantıları kullanılarak otomatik görüntü indirme işlemi gerçekleştirilmiştir.
+
+### 8.1. Görsel İndirme Sonuçları
+
+| Özellik | Sonuç |
+|---|---:|
+| Toplam kitap kaydı | 52.478 |
+| Kapak URL'si bulunan kayıt | 51.873 |
+| Başarıyla indirilen görüntü | 51.870 |
+| İndirilemeyen görüntü | 3 |
+| İndirme başarı oranı | %99,994 |
+| Bozuk veya okunamayan görüntü | 0 |
+
+İndirme işlemi sırasında görseller RGB formatına dönüştürülerek JPEG olarak kaydedilmiştir.
+
+İndirme sonrasında bütün görüntüler PIL kütüphanesi kullanılarak incelenmiştir.
+
+### 8.2. Görüntü Özellikleri
+
+- Toplam görüntü sayısı: 51.870
+- Renk modu: RGB
+- Dosya formatı: JPEG
+- Görüntü boyutları: Değişken
+- Bozuk veya okunamayan dosya sayısı: 0
+
+En sık karşılaşılan görüntü boyutları arasında 317×475, 316×475 ve 314×475 piksel bulunmaktadır.
+
+BookCover30 veri setinden farklı olarak Goodreads görüntülerinin boyutları sabit değildir. Model değerlendirmesi öncesinde görüntülerin ortak giriş boyutuna dönüştürülmesi planlanmaktadır.
+
+### 8.3. Örnek Kapak Görüntüleri
+
+![Goodreads örnek kitap kapakları](goodreads_sample_covers.png)
+
+*Şekil 4. Goodreads veri setinden üç aday kategori için seçilen 12 kitap kapağı.*
+
+Örnek görüntüler, kitap kapaklarının farklı tasarım, renk ve tipografi özelliklerine sahip olduğunu göstermektedir.
+
+Kategori isimleri Goodreads türlerinden otomatik olarak eşleştirilmiştir. Bu etiketlerin doğruluğu henüz kesinleştirilmemiştir.
+
+### 8.4. Genel Değerlendirme
+
+Goodreads veri setinin görüntü indirme ve temel dosya bütünlüğü kontrolleri tamamlanmıştır.
+
+İndirilen 51.870 görüntüde bozuk veya okunamayan dosya tespit edilmemiştir.
+
+Veri seti, BookCover30 üzerinde eğitilecek modellerin farklı kaynaklardan gelen kitap kapaklarında değerlendirilmesi için kullanılabilecek bir görsel kaynak hâline getirilmiştir.
+
+Nihai değerlendirme öncesinde kategori eşleştirmelerinin güvenilirliği ve veri setleri arasındaki olası kitap/görsel örtüşmeleri ayrıca incelenecektir.
